@@ -26,7 +26,25 @@ var albumMarconi = {
          { title: 'Can you hear me now?', duration: '3:14' },
          { title: 'Wrong phone number', duration: '2:15'}
      ]
- };
+};
+ 
+var albumLumineer = {
+    title: 'Cleopatra',
+    artist: 'The Lumineers',
+    label: 'Music Label',
+    year: '2016',
+    albumArtUrl: 'assets/images/album_covers/10.png',
+    songs: [
+        { title: 'Sleep on the Floor', duration: '3:32' },
+        { title: 'Ophelia', duration: '2:40' },
+        { title: 'Cleopatra', duration: '3:21'},
+        { title: 'Gun Song', duration: '3:37' },
+        { title: 'Angela', duration: '3:22'},
+        { title: 'In the Light', duration: '3:52'},
+        { title: 'Gale Song', duration: '3:14'}
+    ]
+};
+ 
  
 var createSongRow = function(songNumber, songName, songLength) {
  var template =
@@ -39,6 +57,8 @@ var createSongRow = function(songNumber, songName, songLength) {
 
     return template;
 };
+
+var albumImage = document.getElementsByClassName('album-cover-art')[0];
 
 var setCurrentAlbum = function(album) {
     var albumTitle = document.getElementsByClassName('album-view-title')[0];
@@ -61,4 +81,15 @@ var setCurrentAlbum = function(album) {
 
 window.onload = function() {
     setCurrentAlbum(albumPicasso);
+    
+    var albums = [albumPicasso, albumMarconi, albumLumineer];
+    var index = 1;
+    
+    albumImage.addEventListener("click", function(event) {
+        setCurrentAlbum(albums[index]);
+        index++;
+        if (index == albums.length) {
+            index = 0;
+        }
+    });
 };
