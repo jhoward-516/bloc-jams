@@ -222,11 +222,8 @@ var updatePlayerBarSong = function() {
     $('.currently-playing .artist-name').text(currentAlbum.artist);
     $('.currently-playing .artist-song-mobile').text(currentSongFromAlbum.title + " - " + currentAlbum.artist);
     $('.main-controls .play-pause').html(playerBarPauseButton);
-<<<<<<< HEAD
-=======
     
     setTotalTimeInPlayerBar(filterTimeCode(currentSongFromAlbum.duration));
->>>>>>> assignment-34_seek-bars
 };
 
 var nextSong = function() {
@@ -318,11 +315,7 @@ var currentAlbum = null;
 var currentlyPlayingSongNumber = null;
 var currentSongFromAlbum = null;
 var currentSoundFile = null;
-<<<<<<< HEAD
-var currentVolume = 1;
-=======
 var currentVolume = 15;
->>>>>>> assignment-34_seek-bars
 
 var $previousButton = $('.main-controls .previous');
 var $nextButton = $('.main-controls .next');
